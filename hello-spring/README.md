@@ -97,3 +97,15 @@
 - `@Component` 어노테이션이 있는 클래스는 스프링이 뜰 때 컴포넌트 스캔에 의해 컨테이너에 빈으로 등록한다.
 - `@Service` `@Repository` `@Controller` 모두 `@Component` 를 포함하고 있다
 - 컴포넌트 스캔은 `@SpringBootApplication` 패키지의 하위를 기본적으로 진행한다(설정을 통해 경로지정은 가능한다)
+
+## 2024-10-29
+
+- 스프링빈으로 등록하는 방법은 컴포넌트스캔(자동)과 `@Bean` 을 이용한 수동 등록이 있다
+
+## 2024-10-30
+
+- jdbc 를 통해서 db와 연결을 할 수 있다.
+- 인터페이스로 구현하면 다형성을 활용해 OCP(open-close principle)를 지킬 수 있다
+- `@SpringBootTest`: 스프링컨테이너를 띄워서 통합테스트
+- `@Transactional` 어노테이션을 테스트에 달면, 테스트 시작전에 트랜잭션을 실행하고, 테스트가 끝나면 항상 롤백한다. 이렇게하면 DB에 데이터가 남지 않으므로 다음 테스트에 영향을 주지 않는다.
+- 순수jdbc -> jdbcTemplate -> jpa -> spring data jpa

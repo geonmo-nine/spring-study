@@ -1,9 +1,7 @@
 package hello.hellospring.repository
 
 import hello.hellospring.domain.Member
-import org.springframework.stereotype.Repository
 
-@Repository
 class MemoryMemberRepository : MemberRepository {
     override fun save(member: Member): Member {
         member.id = sequence++
