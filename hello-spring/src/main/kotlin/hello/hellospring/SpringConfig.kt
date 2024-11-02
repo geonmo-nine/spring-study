@@ -14,7 +14,11 @@ class SpringConfig(
     val memberRepository: MemberRepository
 ) {
     @Bean
-    fun memberService() = MemberService(memberRepository)
+    fun memberService(): MemberService {
+        println(memberRepository)
+
+        return MemberService(memberRepository)
+    }
 
 //    @Bean
 //    fun memberRepository(): MemberRepository {

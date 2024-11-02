@@ -3,7 +3,7 @@ package hello.hellospring.service
 import hello.hellospring.domain.Member
 import hello.hellospring.repository.MemberRepository
 
-class MemberService(
+open class MemberService(
     val memberRepository: MemberRepository
 ) {
     fun join(member: Member): Long? {
@@ -13,7 +13,8 @@ class MemberService(
         return saved.id
     }
 
-    fun findMembers() = memberRepository.findAll()
+    open fun findMembers(): List<Member> = memberRepository.findAll()
+
     fun findOne(id: Long) = memberRepository.findById(id)
 
     private fun validateDuplicateMember(member: Member) {
