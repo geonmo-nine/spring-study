@@ -104,6 +104,9 @@
         - session: 세션마다
         - application: 서블릿 컨텍스트와 같은 생명주기
         - websocket: 웹소켓과 같은 생명주기
+    - 웹스코프를 사용했을때 주의점은 스프링 컨테이너가 뜰때는 해당 빈을 의존성으로 주입해야한다면 에러가 나는 것이다. 이를 해결하기 위해
+        - ObjectProvider 로 필요 시점에 조회해 오게 할 수도 있고
+        - `@Scope("request", proxyMode = ScopedProxyMode.TARGET_CLASS)` 프록시모드를 사용해서 싱글톤처럼 의존성을 주입하게 할 수도 있다
 
 
   
