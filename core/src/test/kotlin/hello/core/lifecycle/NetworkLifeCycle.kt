@@ -1,5 +1,7 @@
 package hello.core.lifecycle
 
+import jakarta.annotation.PostConstruct
+
 class NetworkLifeCycle {
     private var url: String? = null
 
@@ -28,6 +30,7 @@ class NetworkLifeCycle {
         disconnect()
     }
 
+    @PostConstruct
     fun disconnect() {
         println("연결종료")
     }
