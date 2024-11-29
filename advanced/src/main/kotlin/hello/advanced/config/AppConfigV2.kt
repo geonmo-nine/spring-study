@@ -9,11 +9,11 @@ import org.springframework.context.annotation.Configuration
 @Configuration
 class AppConfigV2 {
     @Bean
-    fun orderRepository() = OrderRepositoryV2()
+    fun orderRepositoryV2() = OrderRepositoryV2()
 
     @Bean
-    fun orderService() = OrderServiceV2(orderRepository())
+    fun orderServiceV2() = OrderServiceV2(orderRepositoryV2())
 
     @Bean
-    fun orderController() = OrderControllerV2(orderService())
+    fun orderControllerV2() = OrderControllerV2(orderServiceV2())
 }
