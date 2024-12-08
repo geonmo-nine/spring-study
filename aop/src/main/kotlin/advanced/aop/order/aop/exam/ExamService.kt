@@ -11,6 +11,7 @@ class ExamService(
     @Trace
     @Retry(3)
     fun request(itemId: String) {
+        println("i am " + this)
         examRepository.save(itemId)
     }
 }
